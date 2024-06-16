@@ -6,7 +6,7 @@ import { Link } from 'expo-router';
 export default function index() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-     <Link href={'pages/Auth/Login'} >Go To Tabs</Link>
+     <Link href={'pages/Auth/Login'} >Go To Tabs-</Link>
     </View>
   );
 }
