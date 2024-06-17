@@ -42,7 +42,8 @@
         {
           "contactsPermission": "Allow Apna Mahidpur to access your contacts."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "extra": {
       "router": {
