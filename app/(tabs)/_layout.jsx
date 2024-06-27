@@ -4,8 +4,6 @@ import { Tabs } from "expo-router";
 import { TouchableOpacity, TouchableHighlight, Image } from "react-native";
 import { useRouter } from "expo-router";
 
-
-
 export default function _Layout() {
   function LogoTitle() {
     return (
