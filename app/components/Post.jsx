@@ -13,7 +13,7 @@ export function Post(props) {
   const [Like, SetLike] = useState(false);
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const iconSize = 30;
-  
+
   const handleLike = () => {
     SetLike(!Like);
     Animated.sequence([
@@ -33,7 +33,7 @@ export function Post(props) {
   const handleComment = () => { }
   const handleShare = () => {
     Sharing.isAvailableAsync(true)
-   }
+  }
   const handleSave = () => { }
 
   return (
@@ -42,66 +42,56 @@ export function Post(props) {
         <View className="flex flex-row items-center py-1 gap-2">
           <Image
             className="h-12 w-12 rounded-full"
-            source={{uri:props.image}}
+            source={{ uri: props.image }}
           />
           <View className="flex flex-col">
-            <Text className="text-sm">{props.userName?props.userName:'UserName'}</Text>
-            <Text style={{fontSize:10}}>{props.location?props.location:'Location'}</Text>
+            <Text className="text-sm">{props.userName ? props.userName : 'UserName'}</Text>
+            <Text style={{ fontSize: 10 }}>{props.location ? props.location : 'Location'}</Text>
           </View>
         </View>
         <TouchableWithoutFeedback >
-          <Ionicons name="ellipsis-vertical-outline" size={iconSize} color="black" />
+          <Ionicons name="ellipsis-vertical-outline" size={20} color="black" />
         </TouchableWithoutFeedback>
       </View>
       <View className="w-full aspect-square border border-slate-200">
-        <Image className="w-full aspect-square" source={{uri:props.image}} />
+        <Image className="w-full aspect-square" source={{ uri: props.image }} />
       </View>
-      <View className="flex flex-row justify-between py-2 pl-1 pr-5">
+      <View className="flex flex-row justify-between py-1 pl-3 pr-5">
         <View className="flex flex-row">
-            <TouchableWithoutFeedback
-              onPress={handleLike}
-            >
-              <Animated.View className="flex flex-row items-center mx-2" style={{ transform: [{ scale: scaleAnim }] }}>
-                <Ionicons
-                  name={Like ? "heart" : "heart-outline"}
-                  size={iconSize}
-                  color="#ff0000"
-                />
-            <Text
-             className="text-xs"
-            >
-              {props.likes} Likes
-            </Text>
-              </Animated.View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={handleComment}
-            >
-              <Animated.View className="flex flex-row items-center mx-2" style={{ transform: [{ scale: scaleAnim }] }}>
-                <Ionicons
-                  name={Like ? "heart" : "heart-outline"}
-                  size={iconSize}
-                  color="#ff0000"
-                />
-     
-              </Animated.View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={handleShare}
-            >
-              <Animated.View className="flex flex-row items-center mx-2" style={{ transform: [{ scale: scaleAnim }] }}>
-                <Ionicons
-                  name={Like ? "heart" : "heart-outline"}
-                  size={iconSize}
-                  color="#ff0000"
-                />
-              </Animated.View>
-            </TouchableWithoutFeedback>
-       
+          <TouchableWithoutFeedback
+            onPress={handleLike}
+          >
+            <Animated.View className="flex flex-row items-center" style={{ transform: [{ scale: scaleAnim }] }}>
+              <Ionicons
+                name={Like ? "heart" : "heart-outline"}
+                size={iconSize}
+                color="#ff0000"
+              />
+            </Animated.View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+          // onPress={}
+          >
+            <Ionicons
+              name={"heart-outline"}
+              size={iconSize}
+              color="#ff0000"
+            />
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+          // onPress={}
+          >
+            <Ionicons
+              name={"heart-outline"}
+              size={iconSize}
+              color="#ff0000"
+            />
+          </TouchableWithoutFeedback>
+
         </View>
         <TouchableWithoutFeedback
           className=""
-          onPress={handleSave}
+        // onPress={}
         >
 
           <Ionicons
@@ -112,8 +102,9 @@ export function Post(props) {
 
         </TouchableWithoutFeedback>
       </View>
-      <View style={{ paddingVertical: 5, paddingHorizontal: 15 }}>
-        <Text style={{ fontSize: 12 }}>
+      <View className="flex flex-row px-5 pb-2">
+        <Text style={{ fontSize: 10 }} className="font-bold">{props.likes} Likes</Text>
+        <Text style={{ fontSize: 10 }} className="ml-3">
           {props.caption}
         </Text>
       </View>

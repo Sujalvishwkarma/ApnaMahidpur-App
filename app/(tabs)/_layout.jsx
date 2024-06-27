@@ -5,6 +5,7 @@ import { TouchableOpacity, TouchableHighlight, Image } from "react-native";
 import { useRouter } from "expo-router";
 
 export default function _Layout() {
+  
   function LogoTitle() {
     return (
       <TouchableHighlight>
@@ -98,7 +99,7 @@ export default function _Layout() {
             <HeaderButton
               iconname="chatbubble-outline"
               size={25}
-              onPress={() => router.push('pages/Home/Chat')}
+              onPress={() => router.push('Chat')}
             />
           ),
         }}
