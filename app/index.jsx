@@ -18,7 +18,7 @@ export default function index() {
           <Text style={{fontSize:18}} className="font-extrabold  text-red-800">Apna Mahidpur</Text>
           <Text className="text-sm text-slate-700">Apne shahar ki apani baat</Text>
           <View className="text-center mt-5">
-            <Text className="text-slate-70000">The app for every</Text>
+            <Text className="text-slate-700">The app for every</Text>
             <Text className="font-bold text-center text-teal-900">#Mahidpurian</Text>
           </View>
         </View>
